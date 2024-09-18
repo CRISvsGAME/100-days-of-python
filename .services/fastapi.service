@@ -1,0 +1,16 @@
+[Unit]
+Description=FastAPI Backend
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+Restart=always
+RestartSec=5
+WorkingDirectory=/home/ubuntu/projects/100-days-of-python
+ExecStart=/home/ubuntu/.python/bin/fastapi run /home/ubuntu/projects/100-days-of-python/backend/main.py
+
+
+[Install]
+WantedBy=multi-user.target
